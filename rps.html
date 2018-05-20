@@ -9,6 +9,55 @@
 	<link rel="stylesheet" type="text/css" href="style.css">	
 </head>
 <body>
+	<h1>Rock Paper Scissors</h1>
+
+	<div class="score-board">
+		
+	</div>
 	
+	<script>
+		const rps = (userChoice) => {
+			const computerChoose = () => {
+				const randomNumber = Math.floor(Math.random() * 3);
+				if (randomNumber === 0) {
+					return "rock";
+				} else if (randomNumber === 1) {
+					return "paper";
+				} else {
+					return "scissors";
+				}
+			}
+
+			console.log(`User choice ${userChoice}`)
+
+			let computerChoice = computerChoose();
+			console.log(`Computer choice ${computerChoice}`)
+			console.log(computerChoice == userChoice)
+
+			if (userChoice == computerChoice) {
+				console.log(`You chose ${userChoice}. I chose ${computerChoice}. It's a tie!`);
+			} else if (userChoice === "rock") {
+				if (computerChoice === "paper") {
+					console.log(`You chose ${userChoice}. I chose ${computerChoice}. I win!`);
+				} else {
+					console.log(`You chose ${userChoice}. I chose ${computerChoice}. You win!`);
+				}
+			} else if (userChoice === "paper") {
+				if (computerChoice === "rock") {
+					console.log(`You chose ${userChoice}. I chose ${computerChoice}. You win!`);
+				} else {
+					console.log(`You chose ${userChoice}. I chose ${userChoice}. I win!`);
+				}
+			} else if (userChoice === "scissors") {
+				if (computerChoice === "paper") {
+					console.log(`You chose ${userChoice}. I chose ${computerChoice}. You win!`);
+				} else {
+					console.log(`You chose ${userChoice}. I chose ${computerChoice}. I win!`);
+				}
+			}
+		}
+		
+
+	</script>
 </body>
 </html>
