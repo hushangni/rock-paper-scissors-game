@@ -1,0 +1,26 @@
+.score-board {
+	text-align: center;
+	background: #eee;
+	width: 60%;
+	margin: 0 auto;
+	padding: 20px;
+	color: #444;
+}
+
+h2 {
+	text-transform: uppercase;
+}
+
+h3 {
+	display: inline-block;
+	padding: 20px;
+}
+
+h3 span {
+	font-size: 1.5em;
+	font-weight: 400;
+	color: #6aa0f7;
+	padding: 5px;
+	border: 1px solid #ccc;
+	background-color: white;
+}

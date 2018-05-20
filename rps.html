@@ -11,11 +11,19 @@
 <body>
 	<h1>Rock Paper Scissors</h1>
 
+	<p>Open up your console. Type rps("your choice of rock paper or scissors");</p>
+
 	<div class="score-board">
-		
+		<h2>Score Board: </h2>
+		<h3>User Score: <span id="user-score">0</span></h3>
+		<h3>Computer Score: <span id="computer-score">0</span></h3>
 	</div>
-	
+	<!-- load jquery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script>
+		let userCounter = 0;
+		let computerCounter = 0;
+
 		const rps = (userChoice) => {
 			const computerChoose = () => {
 				const randomNumber = Math.floor(Math.random() * 3);
@@ -35,27 +43,55 @@
 			console.log(computerChoice == userChoice)
 
 			if (userChoice == computerChoice) {
+
 				console.log(`You chose ${userChoice}. I chose ${computerChoice}. It's a tie!`);
+
 			} else if (userChoice === "rock") {
+
 				if (computerChoice === "paper") {
+
 					console.log(`You chose ${userChoice}. I chose ${computerChoice}. I win!`);
+					computerCounter++;
+					$("#computer-score").text(computerCounter);
+
 				} else {
+
 					console.log(`You chose ${userChoice}. I chose ${computerChoice}. You win!`);
+					userCounter++
+					$("#user-score").text(userCounter);
+
 				}
 			} else if (userChoice === "paper") {
+
 				if (computerChoice === "rock") {
+
 					console.log(`You chose ${userChoice}. I chose ${computerChoice}. You win!`);
+					userCounter++
+					$("#user-score").text(userCounter);
+
 				} else {
+
 					console.log(`You chose ${userChoice}. I chose ${userChoice}. I win!`);
+					computerCounter++;
+					$("#computer-score").text(computerCounter);
 				}
 			} else if (userChoice === "scissors") {
+
 				if (computerChoice === "paper") {
+
 					console.log(`You chose ${userChoice}. I chose ${computerChoice}. You win!`);
+					userCounter++
+					$("#user-score").text(userCounter);
+
 				} else {
+
 					console.log(`You chose ${userChoice}. I chose ${computerChoice}. I win!`);
+					computerCounter++;
+					$("#computer-score").text(computerCounter);
 				}
 			}
 		}
+
 		
 
 	</script>
